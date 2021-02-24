@@ -25,7 +25,21 @@ module.exports = {
                         options: {
                             lessOptions: {
                                 modifyVars: {
-                                    "primary-color": "#7f5af0"
+                                    "primary-color": "#7f5af0",
+                                    "white": "#fffffe",
+                                    "black": "#16161a",
+                                    "body-background": "#16161a",
+                                    "component-background": "#16161a",
+                                    "font-family": "Open Sans, sans-serif",
+                                    "text-color": "fade(@white, 85%)",
+                                    "text-color-secondary": "fade(@white, 45%)",
+                                    "text-color-inverse": "@white",
+                                    "icon-color-hover": "fade(@white, 75%)",
+                                    "heading-color": "fade(@white, 85%)",
+                                    "text-color-dark": "fade(@black, 85%)",
+                                    "text-color-secondary-dark": "fade(@black, 65%)",
+                                    "border-color-inverse": "@black",
+
                                 },
                                 javascriptEnabled: true
                             }
