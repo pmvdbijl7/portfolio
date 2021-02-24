@@ -1,6 +1,7 @@
 import { Divider } from 'antd';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
+import { Button } from 'antd';
 
 class Home extends Component {
     render() {
@@ -11,6 +12,8 @@ class Home extends Component {
                 </Helmet>
 
                 <h1>My portfolio</h1>
+
+                <Button type="primary">Click Here!</Button>
             </div>
         )
     }

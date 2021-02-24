@@ -14,15 +14,21 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: [
-                    "style-loader",
-                    "css-loader",
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    },
                     {
                         loader: "less-loader",
                         options: {
-                            modifyVars: {
-                                "primary-color": "#7f5af0"
-                            },
-                            javascriptEnabled: true
+                            lessOptions: {
+                                modifyVars: {
+                                    "primary-color": "#7f5af0"
+                                },
+                                javascriptEnabled: true
+                            }
                         }
                     }
                 ]
