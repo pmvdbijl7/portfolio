@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+require('dotenv/config');
 
 module.exports = {
     entry: path.join(__dirname, "src", "index.js"),
@@ -10,6 +11,22 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.less$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    {
+                        loader: "less-loader",
+                        options: {
+                            modifyVars: {
+                                "primary-color": "#7f5af0"
+                            },
+                            javascriptEnabled: true
+                        }
+                    }
+                ]
+            },
             {
                 test: /.(js|jsx)$/,
                 exclude: /node_modules/,
@@ -35,7 +52,8 @@ module.exports = {
         ]
     },
     devServer: {
-        host: 'localhost',
+        host: process.env.IP_ADDRESS,
+        port: process.env.PORT,
         disableHostCheck: true,
     },
     plugins: [
